@@ -55,7 +55,7 @@ model User {
   email          String?   @unique
   password       String
   roles          Json
-  profilePicture String?
+  profilePicture Json?
   bio            String?
   comments       Comment[]
   follows        Follow[]

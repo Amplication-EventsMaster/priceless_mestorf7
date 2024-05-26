@@ -12,7 +12,7 @@ export type User = {
   username: string;
   email: string | null;
   roles: JsonValue;
-  profilePicture: string | null;
+  profilePicture: JsonValue;
   bio: string | null;
   comments?: Array<Comment>;
   follows?: Array<Follow>;

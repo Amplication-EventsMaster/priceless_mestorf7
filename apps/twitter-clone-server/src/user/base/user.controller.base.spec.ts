@@ -26,7 +26,6 @@ const CREATE_INPUT = {
   username: "exampleUsername",
   email: "exampleEmail",
   password: "examplePassword",
-  profilePicture: "exampleProfilePicture",
   bio: "exampleBio",
 };
 const CREATE_RESULT = {
@@ -38,7 +37,6 @@ const CREATE_RESULT = {
   username: "exampleUsername",
   email: "exampleEmail",
   password: "examplePassword",
-  profilePicture: "exampleProfilePicture",
   bio: "exampleBio",
 };
 const FIND_MANY_RESULT = [
@@ -51,7 +49,6 @@ const FIND_MANY_RESULT = [
     username: "exampleUsername",
     email: "exampleEmail",
     password: "examplePassword",
-    profilePicture: "exampleProfilePicture",
     bio: "exampleBio",
   },
 ];
@@ -64,7 +61,6 @@ const FIND_ONE_RESULT = {
   username: "exampleUsername",
   email: "exampleEmail",
   password: "examplePassword",
-  profilePicture: "exampleProfilePicture",
   bio: "exampleBio",
 };
 

@@ -17,6 +17,8 @@ import * as nestAccessControl from "nest-access-control";
 import * as gqlACGuard from "../../auth/gqlAC.guard";
 import { GqlDefaultAuthGuard } from "../../auth/gqlDefaultAuth.guard";
 import * as common from "@nestjs/common";
+import { GraphQLUpload } from "graphql-upload";
+import { FileUpload } from "src/storage/base/storage.types";
 import { AclFilterResponseInterceptor } from "../../interceptors/aclFilterResponse.interceptor";
 import { AclValidateRequestInterceptor } from "../../interceptors/aclValidateRequest.interceptor";
 import { User } from "./User";
@@ -136,6 +138,27 @@ export class UserResolverBase {
       }
       throw error;
     }
+  }
+
+  @graphql.Mutation(() => User)
+  async uploadProfilePicture(
+    @graphql.Args({
+      name: "file",
+      type: () => GraphQLUpload,
+    })
+    file: FileUpload,
+    @graphql.Args()
+    args: UserFindUniqueArgs
+  ): Promise<User> {
+    return await this.service.uploadProfilePicture(args, file);
+  }
+
+  @graphql.Mutation(() => User)
+  async deleteProfilePicture(
+    @graphql.Args()
+    args: UserFindUniqueArgs
+  ): Promise<User> {
+    return await this.service.deleteProfilePicture(args);
   }
 
   @common.UseInterceptors(AclFilterResponseInterceptor)

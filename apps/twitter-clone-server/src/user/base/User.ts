@@ -96,14 +96,13 @@ class User {
 
   @ApiProperty({
     required: false,
-    type: String,
   })
-  @IsString()
+  @IsJSONValue()
   @IsOptional()
-  @Field(() => String, {
+  @Field(() => GraphQLJSON, {
     nullable: true,
   })
-  profilePicture!: string | null;
+  profilePicture!: JsonValue;
 
   @ApiProperty({
     required: false,

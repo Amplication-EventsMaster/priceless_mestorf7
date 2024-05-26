@@ -15,6 +15,7 @@ import { StringFilter } from "../../util/StringFilter";
 import { Type } from "class-transformer";
 import { IsOptional, ValidateNested } from "class-validator";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
+import { JsonFilter } from "../../util/JsonFilter";
 import { CommentListRelationFilter } from "../../comment/base/CommentListRelationFilter";
 import { FollowListRelationFilter } from "../../follow/base/FollowListRelationFilter";
 import { LikeListRelationFilter } from "../../like/base/LikeListRelationFilter";
@@ -78,14 +79,14 @@ class UserWhereInput {
 
   @ApiProperty({
     required: false,
-    type: StringNullableFilter,
+    type: JsonFilter,
   })
-  @Type(() => StringNullableFilter)
+  @Type(() => JsonFilter)
   @IsOptional()
-  @Field(() => StringNullableFilter, {
+  @Field(() => JsonFilter, {
     nullable: true,
   })
-  profilePicture?: StringNullableFilter;
+  profilePicture?: JsonFilter;
 
   @ApiProperty({
     required: false,

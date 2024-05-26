@@ -10,7 +10,7 @@ export type UserUpdateInput = {
   email?: string | null;
   password?: string;
   roles?: InputJsonValue;
-  profilePicture?: string | null;
+  profilePicture?: InputJsonValue;
   bio?: string | null;
   comments?: CommentUpdateManyWithoutUsersInput;
   follows?: FollowUpdateManyWithoutUsersInput;

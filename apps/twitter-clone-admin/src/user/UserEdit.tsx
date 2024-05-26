@@ -30,7 +30,7 @@ export const UserEdit = (props: EditProps): React.ReactElement => {
           optionText="label"
           optionValue="value"
         />
-        <TextInput label="profilePicture" source="profilePicture" />
+        <div />
         <TextInput label="bio" multiline source="bio" />
         <ReferenceArrayInput
           source="comments"

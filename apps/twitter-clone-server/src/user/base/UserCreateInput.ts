@@ -80,14 +80,13 @@ class UserCreateInput {
 
   @ApiProperty({
     required: false,
-    type: String,
   })
-  @IsString()
+  @IsJSONValue()
   @IsOptional()
-  @Field(() => String, {
+  @Field(() => GraphQLJSON, {
     nullable: true,
   })
-  profilePicture?: string | null;
+  profilePicture?: InputJsonValue;
 
   @ApiProperty({
     required: false,
